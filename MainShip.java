@@ -262,62 +262,62 @@ class AircraftCarrier extends Ship {
 
 class ShipPlacement {
     public static void placeShips() {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Place an Aircraft Carrier");
+            System.out.print("Name of Aircraft Carrier: ");
+            String acName = scanner.nextLine();
+            System.out.print("X Location: ");
+            int acX = scanner.nextInt();
+            System.out.print("Y Location: ");
+            char acY = scanner.next().charAt(0);
+            System.out.print("Orientation choose (Vertical/Horizontal): ");
+            String acOrientation = scanner.next();
 
-        System.out.println("Place an Aircraft Carrier");
-        System.out.print("Name of Aircraft Carrier: ");
-        String acName = scanner.nextLine();
-        System.out.print("X Location: ");
-        int acX = scanner.nextInt();
-        System.out.print("Y Location: ");
-        char acY = scanner.next().charAt(0);
-        System.out.print("Orientation choose (Vertical/Horizontal): ");
-        String acOrientation = scanner.next();
+            AircraftCarrier ac = new AircraftCarrier(acName, acX, acY, acOrientation);
 
-        AircraftCarrier ac = new AircraftCarrier(acName, acX, acY, acOrientation);
+            System.out.println("Place 2 Battleships");
+            System.out.print("Name of Battleship: ");
+            String bName = scanner.next();
+            System.out.print("X Location: ");
+            int bX = scanner.nextInt();
+            System.out.print("Y Location: ");
+            char bY = scanner.next().charAt(0);
+            System.out.print("Orientation choose (Vertical/Horizontal): ");
+            String bOrientation = scanner.next();
 
-        System.out.println("Place 2 Battleships");
-        System.out.print("Name of Battleship: ");
-        String bName = scanner.next();
-        System.out.print("X Location: ");
-        int bX = scanner.nextInt();
-        System.out.print("Y Location: ");
-        char bY = scanner.next().charAt(0);
-        System.out.print("Orientation choose (Vertical/Horizontal): ");
-        String bOrientation = scanner.next();
+            Battleship b = new Battleship(bName, bX, bY, bOrientation);
 
-        Battleship b = new Battleship(bName, bX, bY, bOrientation);
+            System.out.print("Name of Second Battleship: ");
+            String b2Name = scanner.next();
+            System.out.print("X Location: ");
+            int b2X = scanner.nextInt();
+            System.out.print("Y Location: ");
+            char b2Y = scanner.next().charAt(0);
+            System.out.print("Orientation choose (Vertical/Horizontal): ");
+            String b2Orientation = scanner.next();
 
-        System.out.print("Name of Second Battleship: ");
-        String b2Name = scanner.next();
-        System.out.print("X Location: ");
-        int b2X = scanner.nextInt();
-        System.out.print("Y Location: ");
-        char b2Y = scanner.next().charAt(0);
-        System.out.print("Orientation choose (Vertical/Horizontal): ");
-        String b2Orientation = scanner.next();
+            Battleship b2 = new Battleship(b2Name, b2X, b2Y, b2Orientation);
 
-        Battleship b2 = new Battleship(b2Name, b2X, b2Y, b2Orientation);
+            System.out.println("Please place a Submarine:");
+            System.out.print("Name of Submarine: ");
+            String sName = scanner.next();
+            System.out.print("X Location: ");
+            int sX = scanner.nextInt();
+            System.out.print("Y Location: ");
+            char sY = scanner.next().charAt(0);
+            System.out.print("Orientation choose (Vertical/Horizontal): ");
+            String sOrientation = scanner.next();
 
-        System.out.println("Please place a Submarine:");
-        System.out.print("Name of Submarine: ");
-        String sName = scanner.next();
-        System.out.print("X Location: ");
-        int sX = scanner.nextInt();
-        System.out.print("Y Location: ");
-        char sY = scanner.next().charAt(0);
-        System.out.print("Orientation choose (Vertical/Horizontal): ");
-        String sOrientation = scanner.next();
+            Submarine s = new Submarine(sName, sX, sY, sOrientation);
 
-        Submarine s = new Submarine(sName, sX, sY, sOrientation);
+            // You can now access the details of each ship if needed.
+            System.out.println("Ships placed successfully!");
 
-        // You can now access the details of each ship if needed.
-        System.out.println("Ships placed successfully!");
-
-        ac.printEndCoordinates();
-        b.printEndCoordinates();
-        b2.printEndCoordinates();
-        s.printEndCoordinates();
+            ac.printEndCoordinates();
+            b.printEndCoordinates();
+            b2.printEndCoordinates();
+            s.printEndCoordinates();
+        }
     }
 }
 
