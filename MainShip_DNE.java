@@ -321,7 +321,7 @@ class ShipPlacement {
     }
 }
 
-public class MainShip {
+public class MainShip_DNE {
     public static void main(String[] args) {
         ShipPlacement.placeShips();
     }
