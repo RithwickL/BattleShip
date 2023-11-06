@@ -1,113 +1,119 @@
-import java.util.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class battleshipRunner {
     static int Globalx;
     static char Globaly;
 
     public static void main(String[] args) {
-        String temp = "";
-        String input = "";
-        int input2;
-        char input3 = 'A';
-        String input4 = "";
+        String inputY;
+        String name;
+        int Xval;
+        char Yval;
+        String Ori;
+
         try (Scanner info = new Scanner(System.in)) {
-            System.out
-                    .println(
-                            "You need to make four ships in total.(1 Aircraft Carrier, One Submarine and 2 Battleships)");
-            System.out.println("You will first make an aircraft carrier.");
+            System.out.println(
+                    "Player 1 you need to make three ships in total. (An Aircraft Carrier, Submarine and Battleship)");
 
-            System.out.println("What is the name of the aircraft carrier");
-            input = info.nextLine();
+            // Aircraft
+            System.out.println("You will first make an Aircraft Carrier.");
 
-            System.out.println("What is your starting x position(Please use an int 1-10)?");
-            input2 = info.nextInt();
+            System.out.println("What is the name of the Aircraft Carrier");
+            name = info.nextLine();
 
-            System.out.println("What is your starting y position(A-J)?");
-            temp = info.nextLine();
-            temp = info.nextLine();
-            input3 = temp.charAt(0);
+            System.out.println("What is your starting X position (Please use an int 1-10)?");
+            Xval = info.nextInt();
 
-            System.out.println("Do you want it to be vertical or horizontal?");
-            input4 = info.nextLine().toLowerCase();
+            System.out.println("What is your starting Y position (A-J)?");
+            inputY = info.nextLine();
+            inputY = info.nextLine();
+            Yval = inputY.charAt(0);
 
-            aircraftCarrier jack = new aircraftCarrier(input, input2, input3, input4);
-            endPoints(input4, input2, input3, jack.size);
-            System.out.println("******************");
+            System.out.println("Do you want it to be Vertical or Horizontal?");
+            Ori = info.nextLine();
 
+            aircraftCarrier A1 = new aircraftCarrier(name, Xval, Yval, Ori);
+            endPoints(Ori, Xval, Yval, A1.size);
+            System.out.println("*******************************************");
+
+            // Battleship
             System.out.println("You will now make a Battleship.");
 
             System.out.println("What is the name of the Battleship");
-            input = info.nextLine();
+            name = info.nextLine();
 
-            System.out.println("Do you want it to be vertical or horizontal");
-            input4 = info.nextLine().toLowerCase();
+            System.out.println("What is your starting X position (Please use an int 1-10)?");
+            Xval = info.nextInt();
 
-            System.out.println("What is your starting x position(Please use an int 1-10)");
-            input2 = info.nextInt();
+            System.out.println("What is your starting Y position (A-J)?");
+            inputY = info.nextLine();
+            inputY = info.nextLine();
+            Yval = inputY.charAt(0);
 
-            System.out.println("What is your starting y position(Please use an character A-J)");
-            temp = info.nextLine();
-            temp = info.nextLine();
-            input3 = temp.charAt(0);
+            System.out.println("Do you want it to be Vertical or Horizontal?");
+            Ori = info.nextLine();
 
-            battleship james = new battleship(input, input2, input3, input4);
-            endPoints(input4, input2, input3, james.size);
-            System.out.println("******************");
+            battleship B1 = new battleship(name, Xval, Yval, Ori);
+            endPoints(Ori, Xval, Yval, B1.size);
+            System.out.println("*******************************************");
 
-            System.out.println("You will now make a second Battleship.");
-
-            System.out.println("What is the name of the Battleship");
-            input = info.nextLine();
-
-            System.out.println("What is your starting x position(Please use an int 1-10)");
-            input2 = info.nextInt();
-
-            System.out.println("What is your starting y position(Please use an character A-J)");
-            temp = info.nextLine();
-            temp = info.nextLine();
-            input3 = temp.charAt(0);
-
-            System.out.println("Do you want it to be vertical or horizontal?");
-            input4 = info.nextLine().toLowerCase();
-
-            battleship jame = new battleship(input, input2, input3, input4);
-            endPoints(input4, input2, input3, jame.size);
-            System.out.println("******************");
-
+            // Submarine
             System.out.println("You will now make a Submarine.");
 
             System.out.println("What is the name of the Submarine");
-            input = info.nextLine();
+            name = info.nextLine();
 
-            System.out.println("What is your starting x position(Please use an int 1-10)");
-            input2 = info.nextInt();
+            System.out.println("What is your starting X position (Please use an int 1-10)?");
+            Xval = info.nextInt();
 
-            System.out.println("What is your starting y position(Please use an character A-J)");
-            temp = info.nextLine();
-            temp = info.nextLine();
-            input3 = temp.charAt(0);
+            System.out.println("What is your starting Y position (A-J)?");
+            inputY = info.nextLine();
+            inputY = info.nextLine();
+            Yval = inputY.charAt(0);
 
-            System.out.println("Do you want it to be vertical or horizontal");
-            input4 = info.nextLine().toLowerCase();
+            System.out.println("Do you want it to be Vertical or Horizontal?");
+            Ori = info.nextLine();
+
+            submarine S1 = new submarine(name, Xval, Yval, Ori);
+            endPoints(Ori, Xval, Yval, S1.size);
+            System.out.println("*******************************************");
+
+            // Clear Question
+            System.out.println("Press Enter to clear console and move to Player 2");
+
+            // Wait for Enter and clear console
+            try {
+                System.in.read();
+                clearConsole();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
-        submarine steve = new submarine(input, input2, input3, input4);
-        endPoints(input4, input2, input3, steve.size);
-        System.out.println("******************");
-
     }
 
     public static void endPoints(String d, int x, char y, int s) {
-        if (d.equals("vertical")) {
+        if (d.equals("vertical") || d.equals("Vertical")) {
             Globalx = s + x;
             System.out.println("End Points: " + Globalx + "," + y);
-        } else if (d.equals("horizontal")) {
+        } else if (d.equals("horizontal") || d.equals("Horizontal")) {
             Globaly = (char) (y + s);
             System.out.println("End Points: " + x + "," + Globaly);
         } else {
-
             System.err.println("Invalid orientation: " + d);
+        }
+    }
 
+    public static void clearConsole() {
+        try {
+            if (System.getProperty("os.name").contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
