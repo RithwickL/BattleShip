@@ -82,402 +82,510 @@ public class battleshipRunner {
         BoardLet[10] = "J";
         try (Scanner info = new Scanner(System.in)) {
             clearConsole();
+            System.out.println("Do you want to make the ships on your own. If so type yes");
+            String answer = info.nextLine();
+            if (answer.equals("yes")) {
 
-            System.out.println(
-                    "Player 1 you need to make three ships in total. (An Aircraft Carrier, Submarine and Battleship)");
+                System.out.println(
+                        "Player 1 you need to make three ships in total. (An Aircraft Carrier, Submarine and Battleship)");
 
-            System.out.println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
+                System.out
+                        .println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC1.length; i++) {
+                    System.out.print(BoardC1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC2.length; i++) {
+                    System.out.print(BoardC2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC3.length; i++) {
+                    System.out.print(BoardC3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC4.length; i++) {
+                    System.out.print(BoardC4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC5.length; i++) {
+                    System.out.print(BoardC5[i] + " ");
+                }
+
+                // Aircraft
+                System.out.println(" ");
+
+                System.out.println("You will first make an Aircraft Carrier.");
+
+                System.out.println("What is the name of the Aircraft Carrier");
+                name = info.nextLine();
+                shipNames[0] = name;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                while (true) {
+                    Xval = info.nextInt();
+                    if (Xval >= 1 && Xval <= 5) {
+                        shipXVals[0] = Xval;
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                    }
+                }
+
+                while (true)
+                {
+                    System.out.println("What is your starting Y position (A-J)? Use capital letters");
+                    inputY = info.nextLine();
+                    
+                    if (inputY.length() != 1)
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J).");
+                        continue;
+                    }
+                    
+                    Yval = inputY.charAt(0);
+                    
+                    if (Yval >= 'A' && Yval <= 'J') 
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J) Use captial letters.");
+
+                    }
+
+
+                    while (true) {
+                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        Ori = info.nextLine();
+    
+                        if (Ori.equalsIgnoreCase("Vertical") || Ori.equalsIgnoreCase("Horizontal")) {
+                            shipOrientations[0] = Ori;
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter Vertical or Horizontal");
+                        }
+                    }
+
+                aircraftCarrier A1 = new aircraftCarrier(name, Xval, Yval, Ori);
+                points(Ori, Xval, Yval, A1.size);
+                System.out.println("*******************************************");
+
+                System.out
+                        .println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC1.length; i++) {
+                    System.out.print(BoardC1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC2.length; i++) {
+                    System.out.print(BoardC2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC3.length; i++) {
+                    System.out.print(BoardC3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC4.length; i++) {
+                    System.out.print(BoardC4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC5.length; i++) {
+                    System.out.print(BoardC5[i] + " ");
+                }
+
+                // Battleship
+                System.out.println(" ");
+
+                System.out.println("You will now make a Battleship.");
+
+                System.out.println("What is the name of the Battleship");
+                name = info.nextLine();
+                shipNames[1] = name;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                while (true) {
+                    Xval = info.nextInt();
+                    if (Xval >= 1 && Xval <= 5) {
+                        shipXVals[0] = Xval;
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                    }
+                }
+
+                while (true) 
+                {
+                    System.out.println("What is your starting Y position (A-J)? Use capital letters");
+                    inputY = info.nextLine();
+                    
+                    if (inputY.length() != 1) 
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J).");
+                        continue;
+                    }
+                    
+                    Yval = inputY.charAt(0);
+                    
+                    if (Yval >= 'A' && Yval <= 'J') 
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J) Use captial letters.");
+
+                    }
+
+
+                    while (true) {
+                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        Ori = info.nextLine();
+    
+                        if (Ori.equalsIgnoreCase("Vertical") || Ori.equalsIgnoreCase("Horizontal")) {
+                            shipOrientations[0] = Ori;
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter Vertical or Horizontal");
+                        }
+                    }
+
+                battleship B1 = new battleship(name, Xval, Yval, Ori);
+                points(Ori, Xval, Yval, B1.size);
+                System.out.println("*******************************************");
+
+                System.out.println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC1.length; i++) {
+                    System.out.print(BoardC1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC2.length; i++) {
+                    System.out.print(BoardC2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC3.length; i++) {
+                    System.out.print(BoardC3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC4.length; i++) {
+                    System.out.print(BoardC4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC5.length; i++) {
+                    System.out.print(BoardC5[i] + " ");
+                }
+
+                // Submarine
+                System.out.println(" ");
+
+                System.out.println("You will now make a Submarine.");
+
+                System.out.println("What is the name of the Submarine");
+                name = info.nextLine();
+                shipNames[2] = name;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                while (true) {
+                    Xval = info.nextInt();
+                    if (Xval >= 1 && Xval <= 5) {
+                        shipXVals[0] = Xval;
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                    }
+                }
+
+                while (true) 
+                {
+                    System.out.println("What is your starting Y position (A-J)? Use capital letters");
+                    inputY = info.nextLine();
+                    
+                    if (inputY.length() != 1) 
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J).");
+                        continue;
+                    }
+                    
+                    Yval = inputY.charAt(0);
+                    
+                    if (Yval >= 'A' && Yval <= 'J') 
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("Invalid input. Please enter a single character (A-J) Use captial letters.");
+
+                    }
+
+
+                    while (true) {
+                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        Ori = info.nextLine();
+    
+                        if (Ori.equalsIgnoreCase("Vertical") || Ori.equalsIgnoreCase("Horizontal")) {
+                            shipOrientations[0] = Ori;
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter Vertical or Horizontal");
+                        }
+                    }
+
+                submarine S1 = new submarine(name, Xval, Yval, Ori);
+                points(Ori, Xval, Yval, S1.size);
+                System.out.println("*******************************************");
+
+                System.out.println(
+                        "Now Printing Final Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC1.length; i++) {
+                    System.out.print(BoardC1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC2.length; i++) {
+                    System.out.print(BoardC2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC3.length; i++) {
+                    System.out.print(BoardC3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC4.length; i++) {
+                    System.out.print(BoardC4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardC5.length; i++) {
+                    System.out.print(BoardC5[i] + " ");
+                }
+
+                // Clear Question
+                System.out.println(" ");
+                System.out.println("Press Enter to clear console and move to Player 2");
+
+                // Wait for Enter and clear console
+                try {
+                    System.in.read();
+                    clearConsole();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // Start Player 2
+                System.out.println(" ");
+                System.out.println(
+                        "Player 2 you need to make three ships in total. (An Aircraft Carrier, Submarine and Battleship)");
+
+                System.out
+                        .println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C1.length; i++) {
+                    System.out.print(Board2C1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C2.length; i++) {
+                    System.out.print(Board2C2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C3.length; i++) {
+                    System.out.print(Board2C3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C4.length; i++) {
+                    System.out.print(Board2C4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C5.length; i++) {
+                    System.out.print(Board2C5[i] + " ");
+                }
+
+                // Aircraft
+                System.out.println(" ");
+
+                System.out.println("You will first make an Aircraft Carrier.");
+
+                System.out.println("What is the name of the Aircraft Carrier");
+                name2 = info.nextLine();
+                shipNames[3] = name2;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                Xval2 = info.nextInt();
+                shipXVals[3] = Xval2;
+
+                System.out.println("What is your starting Y position (A-J)?");
+                inputY2 = info.nextLine();
+                inputY2 = info.nextLine();
+                Yval2 = inputY.charAt(0);
+                shipYVals[3] = Yval2;
+
+                System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
+                Ori2 = info.nextLine();
+                shipOrientations[3] = Ori2;
+
+                aircraftCarrier A2 = new aircraftCarrier(name2, Xval2, Yval2, Ori2);
+                points2(Ori2, Xval2, Yval2, A2.size);
+                System.out.println("*******************************************");
+
+                System.out
+                        .println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C1.length; i++) {
+                    System.out.print(Board2C1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C2.length; i++) {
+                    System.out.print(Board2C2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C3.length; i++) {
+                    System.out.print(Board2C3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C4.length; i++) {
+                    System.out.print(Board2C4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C5.length; i++) {
+                    System.out.print(Board2C5[i] + " ");
+                }
+
+                // Battleship
+                System.out.println(" ");
+
+                System.out.println("You will now make a Battleship.");
+
+                System.out.println("What is the name of the Battleship");
+                name2 = info.nextLine();
+                shipNames[4] = name2;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                Xval2 = info.nextInt();
+                shipXVals[4] = Xval2;
+
+                System.out.println("What is your starting Y position (A-J)?");
+                inputY2 = info.nextLine();
+                inputY2 = info.nextLine();
+                Yval2 = inputY.charAt(0);
+                shipYVals[4] = Yval2;
+
+                System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
+                Ori2 = info.nextLine();
+                shipOrientations[4] = Ori2;
+
+                battleship B2 = new battleship(name2, Xval2, Yval2, Ori2);
+                points2(Ori2, Xval2, Yval2, B2.size);
+                System.out.println("*******************************************");
+
+                System.out
+                        .println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C1.length; i++) {
+                    System.out.print(Board2C1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C2.length; i++) {
+                    System.out.print(Board2C2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C3.length; i++) {
+                    System.out.print(Board2C3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C4.length; i++) {
+                    System.out.print(Board2C4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C5.length; i++) {
+                    System.out.print(Board2C5[i] + " ");
+                }
+
+                // Submarine
+                System.out.println(" ");
+
+                System.out.println("You will now make a Submarine.");
+
+                System.out.println("What is the name of the Submarine");
+                name2 = info.nextLine();
+                shipNames[5] = name2;
+
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                Xval2 = info.nextInt();
+                shipXVals[5] = Xval2;
+
+                System.out.println("What is your starting Y position (A-J)?");
+                inputY2 = info.nextLine();
+                inputY2 = info.nextLine();
+                Yval2 = inputY.charAt(0);
+                shipYVals[5] = Yval2;
+
+                System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
+                Ori2 = info.nextLine();
+                shipOrientations[5] = Ori2;
+
+                submarine S2 = new submarine(name2, Xval2, Yval2, Ori2);
+                points2(Ori2, Xval2, Yval2, S2.size);
+                System.out.println("*******************************************");
+
+                System.out.println(
+                        "Now Printing Final Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C1.length; i++) {
+                    System.out.print(Board2C1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C2.length; i++) {
+                    System.out.print(Board2C2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C3.length; i++) {
+                    System.out.print(Board2C3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C4.length; i++) {
+                    System.out.print(Board2C4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2C5.length; i++) {
+                    System.out.print(Board2C5[i] + " ");
+                }
+
+                // Clear Question
+                System.out.println(" ");
+                System.out.println("Press Enter to clear console and move to the game");
             }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC1.length; i++) {
-                System.out.print(BoardC1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC2.length; i++) {
-                System.out.print(BoardC2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC3.length; i++) {
-                System.out.print(BoardC3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC4.length; i++) {
-                System.out.print(BoardC4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC5.length; i++) {
-                System.out.print(BoardC5[i] + " ");
-            }
-
-            // Aircraft
-            System.out.println(" ");
-
-            System.out.println("You will first make an Aircraft Carrier.");
-
-            System.out.println("What is the name of the Aircraft Carrier");
-            name = info.nextLine();
-            shipNames[0] = name;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval = info.nextInt();
-            shipXVals[0] = Xval;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY = info.nextLine();
-            inputY = info.nextLine();
-            Yval = inputY.charAt(0);
-            shipYVals[0] = Yval;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori = info.nextLine();
-            shipOrientations[0] = Ori;
-
-            aircraftCarrier A1 = new aircraftCarrier(name, Xval, Yval, Ori);
-            points(Ori, Xval, Yval, A1.size);
-            System.out.println("*******************************************");
-
-            System.out.println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC1.length; i++) {
-                System.out.print(BoardC1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC2.length; i++) {
-                System.out.print(BoardC2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC3.length; i++) {
-                System.out.print(BoardC3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC4.length; i++) {
-                System.out.print(BoardC4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC5.length; i++) {
-                System.out.print(BoardC5[i] + " ");
-            }
-
-            // Battleship
-            System.out.println(" ");
-
-            System.out.println("You will now make a Battleship.");
-
-            System.out.println("What is the name of the Battleship");
-            name = info.nextLine();
-            shipNames[1] = name;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval = info.nextInt();
-            shipXVals[1] = Xval;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY = info.nextLine();
-            inputY = info.nextLine();
-            Yval = inputY.charAt(0);
-            shipYVals[1] = Yval;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori = info.nextLine();
-            shipOrientations[1] = Ori;
-
-            battleship B1 = new battleship(name, Xval, Yval, Ori);
-            points(Ori, Xval, Yval, B1.size);
-            System.out.println("*******************************************");
-
-            System.out.println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC1.length; i++) {
-                System.out.print(BoardC1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC2.length; i++) {
-                System.out.print(BoardC2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC3.length; i++) {
-                System.out.print(BoardC3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC4.length; i++) {
-                System.out.print(BoardC4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC5.length; i++) {
-                System.out.print(BoardC5[i] + " ");
-            }
-
-            // Submarine
-            System.out.println(" ");
-
-            System.out.println("You will now make a Submarine.");
-
-            System.out.println("What is the name of the Submarine");
-            name = info.nextLine();
-            shipNames[2] = name;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval = info.nextInt();
-            shipXVals[2] = Xval;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY = info.nextLine();
-            inputY = info.nextLine();
-            Yval = inputY.charAt(0);
-            shipYVals[2] = Yval;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori = info.nextLine();
-            shipOrientations[2] = Ori;
-
-            submarine S1 = new submarine(name, Xval, Yval, Ori);
-            points(Ori, Xval, Yval, S1.size);
-            System.out.println("*******************************************");
-
-            System.out.println(
-                    "Now Printing Final Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC1.length; i++) {
-                System.out.print(BoardC1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC2.length; i++) {
-                System.out.print(BoardC2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC3.length; i++) {
-                System.out.print(BoardC3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC4.length; i++) {
-                System.out.print(BoardC4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < BoardC5.length; i++) {
-                System.out.print(BoardC5[i] + " ");
-            }
-
-            // Clear Question
-            System.out.println(" ");
-            System.out.println("Press Enter to clear console and move to Player 2");
-
-            // Wait for Enter and clear console
-            try {
-                System.in.read();
-                clearConsole();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            // Start Player 2
-            System.out.println(" ");
-            System.out.println(
-                    "Player 2 you need to make three ships in total. (An Aircraft Carrier, Submarine and Battleship)");
-
-            System.out.println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C1.length; i++) {
-                System.out.print(Board2C1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C2.length; i++) {
-                System.out.print(Board2C2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C3.length; i++) {
-                System.out.print(Board2C3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C4.length; i++) {
-                System.out.print(Board2C4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C5.length; i++) {
-                System.out.print(Board2C5[i] + " ");
-            }
-
-            // Aircraft
-            System.out.println(" ");
-
-            System.out.println("You will first make an Aircraft Carrier.");
-
-            System.out.println("What is the name of the Aircraft Carrier");
-            name2 = info.nextLine();
-            shipNames[3] = name2;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval2 = info.nextInt();
-            shipXVals[3] = Xval2;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY2 = info.nextLine();
-            inputY2 = info.nextLine();
-            Yval2 = inputY.charAt(0);
-            shipYVals[3] = Yval2;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori2 = info.nextLine();
-            shipOrientations[3] = Ori2;
-
-            aircraftCarrier A2 = new aircraftCarrier(name2, Xval2, Yval2, Ori2);
-            points2(Ori2, Xval2, Yval2, A2.size);
-            System.out.println("*******************************************");
-
-            System.out.println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C1.length; i++) {
-                System.out.print(Board2C1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C2.length; i++) {
-                System.out.print(Board2C2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C3.length; i++) {
-                System.out.print(Board2C3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C4.length; i++) {
-                System.out.print(Board2C4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C5.length; i++) {
-                System.out.print(Board2C5[i] + " ");
-            }
-
-            // Battleship
-            System.out.println(" ");
-
-            System.out.println("You will now make a Battleship.");
-
-            System.out.println("What is the name of the Battleship");
-            name2 = info.nextLine();
-            shipNames[4] = name2;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval2 = info.nextInt();
-            shipXVals[4] = Xval2;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY2 = info.nextLine();
-            inputY2 = info.nextLine();
-            Yval2 = inputY.charAt(0);
-            shipYVals[4] = Yval2;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori2 = info.nextLine();
-            shipOrientations[4] = Ori2;
-
-            battleship B2 = new battleship(name2, Xval2, Yval2, Ori2);
-            points2(Ori2, Xval2, Yval2, B2.size);
-            System.out.println("*******************************************");
-
-            System.out.println("Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C1.length; i++) {
-                System.out.print(Board2C1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C2.length; i++) {
-                System.out.print(Board2C2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C3.length; i++) {
-                System.out.print(Board2C3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C4.length; i++) {
-                System.out.print(Board2C4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C5.length; i++) {
-                System.out.print(Board2C5[i] + " ");
-            }
-
-            // Submarine
-            System.out.println(" ");
-
-            System.out.println("You will now make a Submarine.");
-
-            System.out.println("What is the name of the Submarine");
-            name2 = info.nextLine();
-            shipNames[5] = name2;
-
-            System.out.println("What is your starting X position (Please use an int 1-5)?");
-            Xval2 = info.nextInt();
-            shipXVals[5] = Xval2;
-
-            System.out.println("What is your starting Y position (A-J)?");
-            inputY2 = info.nextLine();
-            inputY2 = info.nextLine();
-            Yval2 = inputY.charAt(0);
-            shipYVals[5] = Yval2;
-
-            System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
-            Ori2 = info.nextLine();
-            shipOrientations[5] = Ori2;
-
-            submarine S2 = new submarine(name2, Xval2, Yval2, Ori2);
-            points2(Ori2, Xval2, Yval2, S2.size);
-            System.out.println("*******************************************");
-
-            System.out.println(
-                    "Now Printing Final Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
-            System.out.println(" ");
-            for (int i = 0; i < BoardLet.length; i++) {
-                System.out.print(BoardLet[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C1.length; i++) {
-                System.out.print(Board2C1[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C2.length; i++) {
-                System.out.print(Board2C2[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C3.length; i++) {
-                System.out.print(Board2C3[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C4.length; i++) {
-                System.out.print(Board2C4[i] + " ");
-            }
-            System.out.println(" ");
-            for (int i = 0; i < Board2C5.length; i++) {
-                System.out.print(Board2C5[i] + " ");
-            }
-
-            // Clear Question
-            System.out.println(" ");
-            System.out.println("Press Enter to clear console and move to the game");
 
             // Wait for Enter and clear console
             try {
