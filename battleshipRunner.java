@@ -6,6 +6,7 @@ public class battleshipRunner {
     static char Globaly;
     // Arrays to store ship information
     static String[] shipNames = new String[6];
+    static int[] shipXVals = new int[6];
     static char[] shipYVals = new char[6];
     static String[] shipOrientations = new String[6];
     static int[] BoardC1 = new int[11];
