@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class battleshipRunner {
+public class battleshipRunner extends defaultPlacement {
     static int Globalx;
     static char Globaly;
     // Arrays to store ship information
@@ -9,16 +9,18 @@ public class battleshipRunner {
     static int[] shipXVals = new int[6];
     static char[] shipYVals = new char[6];
     static String[] shipOrientations = new String[6];
-    static int[] BoardC1 = new int[11];
-    static int[] BoardC2 = new int[11];
-    static int[] BoardC3 = new int[11];
-    static int[] BoardC4 = new int[11];
-    static int[] BoardC5 = new int[11];
-    static int[] Board2C1 = new int[11];
-    static int[] Board2C2 = new int[11];
-    static int[] Board2C3 = new int[11];
-    static int[] Board2C4 = new int[11];
-    static int[] Board2C5 = new int[11];
+    /*
+     * static int[] BoardR1 = new int[11];
+     * static int[] BoardR2 = new int[11];
+     * static int[] BoardR3 = new int[11];
+     * static int[] BoardR4 = new int[11];
+     * static int[] BoardR5 = new int[11];
+     * static int[] Board2R1 = new int[11];
+     * static int[] Board2R2 = new int[11];
+     * static int[] Board2R3 = new int[11];
+     * static int[] Board2R4 = new int[11];
+     * static int[] Board2R5 = new int[11];
+     */
     static String[] BoardLet = { " ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
     static int sel;
 
@@ -76,7 +78,7 @@ public class battleshipRunner {
                                 } else if (Yval == 'J') {
                                     sel = 9;
                                 }
-                                Board2C1[sel + 1] = 2;
+                                Board2R1[sel + 1] = 2;
                             } else if (Xval == 2) {
                                 if (Yval == 'A') {
                                     sel = 0;
@@ -99,7 +101,7 @@ public class battleshipRunner {
                                 } else if (Yval == 'J') {
                                     sel = 9;
                                 }
-                                Board2C2[sel + 1] = 2;
+                                Board2R2[sel + 1] = 2;
                             } else if (Xval == 3) {
                                 if (Yval == 'A') {
                                     sel = 0;
@@ -122,7 +124,7 @@ public class battleshipRunner {
                                 } else if (Yval == 'J') {
                                     sel = 9;
                                 }
-                                Board2C3[sel + 1] = 2;
+                                Board2R3[sel + 1] = 2;
                             } else if (Xval == 4) {
                                 if (Yval == 'A') {
                                     sel = 0;
@@ -145,7 +147,7 @@ public class battleshipRunner {
                                 } else if (Yval == 'J') {
                                     sel = 9;
                                 }
-                                Board2C4[sel + 1] = 2;
+                                Board2R4[sel + 1] = 2;
                             } else if (Xval == 4) {
                                 if (Yval == 'A') {
                                     sel = 0;
@@ -168,7 +170,7 @@ public class battleshipRunner {
                                 } else if (Yval == 'J') {
                                     sel = 9;
                                 }
-                                Board2C5[sel + 1] = 2;
+                                Board2R5[sel + 1] = 2;
                             }
                             break;
 
@@ -179,8 +181,8 @@ public class battleshipRunner {
 
                 }
 
-                if (containsOne(Board2C1) || containsOne(Board2C2) || containsOne(Board2C3) || containsOne(Board2C4)
-                        || containsOne(Board2C5)) {
+                if (containsOne(Board2R1) || containsOne(Board2R2) || containsOne(Board2R3) || containsOne(Board2R4)
+                        || containsOne(Board2R5)) {
                     System.out.println("Player two still has ships contains a 1.");
                     System.out.println(" ");
                     System.out.println("Press Enter to clear console and move to Player 2");
@@ -235,7 +237,7 @@ public class battleshipRunner {
                                     } else if (Yval == 'J') {
                                         sel = 9;
                                     }
-                                    Board2C1[sel + 1] = 2;
+                                    Board2R1[sel + 1] = 2;
                                 } else if (Xval == 2) {
                                     if (Yval == 'A') {
                                         sel = 0;
@@ -258,7 +260,7 @@ public class battleshipRunner {
                                     } else if (Yval == 'J') {
                                         sel = 9;
                                     }
-                                    Board2C2[sel + 1] = 2;
+                                    Board2R2[sel + 1] = 2;
                                 } else if (Xval == 3) {
                                     if (Yval == 'A') {
                                         sel = 0;
@@ -281,7 +283,7 @@ public class battleshipRunner {
                                     } else if (Yval == 'J') {
                                         sel = 9;
                                     }
-                                    Board2C3[sel + 1] = 2;
+                                    Board2R3[sel + 1] = 2;
                                 } else if (Xval == 4) {
                                     if (Yval == 'A') {
                                         sel = 0;
@@ -304,7 +306,7 @@ public class battleshipRunner {
                                     } else if (Yval == 'J') {
                                         sel = 9;
                                     }
-                                    Board2C4[sel + 1] = 2;
+                                    Board2R4[sel + 1] = 2;
                                 } else if (Xval == 4) {
                                     if (Yval == 'A') {
                                         sel = 0;
@@ -327,7 +329,7 @@ public class battleshipRunner {
                                     } else if (Yval == 'J') {
                                         sel = 9;
                                     }
-                                    Board2C5[sel + 1] = 2;
+                                    Board2R5[sel + 1] = 2;
                                 }
                                 break;
 
@@ -342,8 +344,8 @@ public class battleshipRunner {
                     System.out.println("Player 2 Board does not contain a Ship.");
                     break;
                 }
-                if (containsOne(BoardC1) || containsOne(BoardC2) || containsOne(BoardC3) || containsOne(BoardC4)
-                        || containsOne(BoardC5)) {
+                if (containsOne(BoardR1) || containsOne(BoardR2) || containsOne(BoardR3) || containsOne(BoardR4)
+                        || containsOne(BoardR5)) {
                     continue;
                 } else {
                     System.out.println("Player 1 Board does not contain a Ship.");
@@ -361,40 +363,40 @@ public class battleshipRunner {
         String Ori;
 
         // Fill the arrays with "0"
-        for (int i = 0; i < BoardC1.length; i++) {
-            BoardC1[i] = 0;
-            Board2C1[i] = 0;
+        for (int i = 0; i < BoardR1.length; i++) {
+            BoardR1[i] = 0;
+            Board2R1[i] = 0;
         }
 
-        for (int i = 0; i < BoardC2.length; i++) {
-            BoardC2[i] = 0;
-            Board2C2[i] = 0;
+        for (int i = 0; i < BoardR2.length; i++) {
+            BoardR2[i] = 0;
+            Board2R2[i] = 0;
         }
 
-        for (int i = 0; i < BoardC3.length; i++) {
-            BoardC3[i] = 0;
-            Board2C3[i] = 0;
+        for (int i = 0; i < BoardR3.length; i++) {
+            BoardR3[i] = 0;
+            Board2R3[i] = 0;
         }
 
-        for (int i = 0; i < BoardC4.length; i++) {
-            BoardC4[i] = 0;
-            Board2C4[i] = 0;
+        for (int i = 0; i < BoardR4.length; i++) {
+            BoardR4[i] = 0;
+            Board2R4[i] = 0;
         }
 
-        for (int i = 0; i < BoardC5.length; i++) {
-            BoardC5[i] = 0;
-            Board2C5[i] = 0;
+        for (int i = 0; i < BoardR5.length; i++) {
+            BoardR5[i] = 0;
+            Board2R5[i] = 0;
         }
-        BoardC1[0] = 1;
-        BoardC2[0] = 2;
-        BoardC3[0] = 3;
-        BoardC4[0] = 4;
-        BoardC5[0] = 5;
-        Board2C1[0] = 1;
-        Board2C2[0] = 2;
-        Board2C3[0] = 3;
-        Board2C4[0] = 4;
-        Board2C5[0] = 5;
+        BoardR1[0] = 1;
+        BoardR2[0] = 2;
+        BoardR3[0] = 3;
+        BoardR4[0] = 4;
+        BoardR5[0] = 5;
+        Board2R1[0] = 1;
+        Board2R2[0] = 2;
+        Board2R3[0] = 3;
+        Board2R4[0] = 4;
+        Board2R5[0] = 5;
         try (Scanner info = new Scanner(System.in)) {
             clearConsole();
             System.out.println(
@@ -413,24 +415,24 @@ public class battleshipRunner {
                     System.out.print(BoardLet[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC1.length; i++) {
-                    System.out.print(BoardC1[i] + " ");
+                for (int i = 0; i < BoardR1.length; i++) {
+                    System.out.print(BoardR1[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC2.length; i++) {
-                    System.out.print(BoardC2[i] + " ");
+                for (int i = 0; i < BoardR2.length; i++) {
+                    System.out.print(BoardR2[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC3.length; i++) {
-                    System.out.print(BoardC3[i] + " ");
+                for (int i = 0; i < BoardR3.length; i++) {
+                    System.out.print(BoardR3[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC4.length; i++) {
-                    System.out.print(BoardC4[i] + " ");
+                for (int i = 0; i < BoardR4.length; i++) {
+                    System.out.print(BoardR4[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC5.length; i++) {
-                    System.out.print(BoardC5[i] + " ");
+                for (int i = 0; i < BoardR5.length; i++) {
+                    System.out.print(BoardR5[i] + " ");
                 }
 
                 // Aircraft
@@ -495,24 +497,24 @@ public class battleshipRunner {
                     System.out.print(BoardLet[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC1.length; i++) {
-                    System.out.print(BoardC1[i] + " ");
+                for (int i = 0; i < BoardR1.length; i++) {
+                    System.out.print(BoardR1[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC2.length; i++) {
-                    System.out.print(BoardC2[i] + " ");
+                for (int i = 0; i < BoardR2.length; i++) {
+                    System.out.print(BoardR2[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC3.length; i++) {
-                    System.out.print(BoardC3[i] + " ");
+                for (int i = 0; i < BoardR3.length; i++) {
+                    System.out.print(BoardR3[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC4.length; i++) {
-                    System.out.print(BoardC4[i] + " ");
+                for (int i = 0; i < BoardR4.length; i++) {
+                    System.out.print(BoardR4[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC5.length; i++) {
-                    System.out.print(BoardC5[i] + " ");
+                for (int i = 0; i < BoardR5.length; i++) {
+                    System.out.print(BoardR5[i] + " ");
                 }
 
                 // Battleship
@@ -576,24 +578,24 @@ public class battleshipRunner {
                     System.out.print(BoardLet[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC1.length; i++) {
-                    System.out.print(BoardC1[i] + " ");
+                for (int i = 0; i < BoardR1.length; i++) {
+                    System.out.print(BoardR1[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC2.length; i++) {
-                    System.out.print(BoardC2[i] + " ");
+                for (int i = 0; i < BoardR2.length; i++) {
+                    System.out.print(BoardR2[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC3.length; i++) {
-                    System.out.print(BoardC3[i] + " ");
+                for (int i = 0; i < BoardR3.length; i++) {
+                    System.out.print(BoardR3[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC4.length; i++) {
-                    System.out.print(BoardC4[i] + " ");
+                for (int i = 0; i < BoardR4.length; i++) {
+                    System.out.print(BoardR4[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardC5.length; i++) {
-                    System.out.print(BoardC5[i] + " ");
+                for (int i = 0; i < BoardR5.length; i++) {
+                    System.out.print(BoardR5[i] + " ");
                 }
 
                 // Submarine
@@ -657,24 +659,24 @@ public class battleshipRunner {
                         System.out.print(BoardLet[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < BoardC1.length; i++) {
-                        System.out.print(BoardC1[i] + " ");
+                    for (int i = 0; i < BoardR1.length; i++) {
+                        System.out.print(BoardR1[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < BoardC2.length; i++) {
-                        System.out.print(BoardC2[i] + " ");
+                    for (int i = 0; i < BoardR2.length; i++) {
+                        System.out.print(BoardR2[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < BoardC3.length; i++) {
-                        System.out.print(BoardC3[i] + " ");
+                    for (int i = 0; i < BoardR3.length; i++) {
+                        System.out.print(BoardR3[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < BoardC4.length; i++) {
-                        System.out.print(BoardC4[i] + " ");
+                    for (int i = 0; i < BoardR4.length; i++) {
+                        System.out.print(BoardR4[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < BoardC5.length; i++) {
-                        System.out.print(BoardC5[i] + " ");
+                    for (int i = 0; i < BoardR5.length; i++) {
+                        System.out.print(BoardR5[i] + " ");
                     }
 
                     // Clear Question
@@ -701,24 +703,24 @@ public class battleshipRunner {
                         System.out.print(BoardLet[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C1.length; i++) {
-                        System.out.print(Board2C1[i] + " ");
+                    for (int i = 0; i < Board2R1.length; i++) {
+                        System.out.print(Board2R1[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C2.length; i++) {
-                        System.out.print(Board2C2[i] + " ");
+                    for (int i = 0; i < Board2R2.length; i++) {
+                        System.out.print(Board2R2[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C3.length; i++) {
-                        System.out.print(Board2C3[i] + " ");
+                    for (int i = 0; i < Board2R3.length; i++) {
+                        System.out.print(Board2R3[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C4.length; i++) {
-                        System.out.print(Board2C4[i] + " ");
+                    for (int i = 0; i < Board2R4.length; i++) {
+                        System.out.print(Board2R4[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C5.length; i++) {
-                        System.out.print(Board2C5[i] + " ");
+                    for (int i = 0; i < Board2R5.length; i++) {
+                        System.out.print(Board2R5[i] + " ");
                     }
 
                     // Aircraft
@@ -784,24 +786,24 @@ public class battleshipRunner {
                         System.out.print(BoardLet[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C1.length; i++) {
-                        System.out.print(Board2C1[i] + " ");
+                    for (int i = 0; i < Board2R1.length; i++) {
+                        System.out.print(Board2R1[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C2.length; i++) {
-                        System.out.print(Board2C2[i] + " ");
+                    for (int i = 0; i < Board2R2.length; i++) {
+                        System.out.print(Board2R2[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C3.length; i++) {
-                        System.out.print(Board2C3[i] + " ");
+                    for (int i = 0; i < Board2R3.length; i++) {
+                        System.out.print(Board2R3[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C4.length; i++) {
-                        System.out.print(Board2C4[i] + " ");
+                    for (int i = 0; i < Board2R4.length; i++) {
+                        System.out.print(Board2R4[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C5.length; i++) {
-                        System.out.print(Board2C5[i] + " ");
+                    for (int i = 0; i < Board2R5.length; i++) {
+                        System.out.print(Board2R5[i] + " ");
                     }
 
                     // Battleship
@@ -866,24 +868,24 @@ public class battleshipRunner {
                         System.out.print(BoardLet[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C1.length; i++) {
-                        System.out.print(Board2C1[i] + " ");
+                    for (int i = 0; i < Board2R1.length; i++) {
+                        System.out.print(Board2R1[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C2.length; i++) {
-                        System.out.print(Board2C2[i] + " ");
+                    for (int i = 0; i < Board2R2.length; i++) {
+                        System.out.print(Board2R2[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C3.length; i++) {
-                        System.out.print(Board2C3[i] + " ");
+                    for (int i = 0; i < Board2R3.length; i++) {
+                        System.out.print(Board2R3[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C4.length; i++) {
-                        System.out.print(Board2C4[i] + " ");
+                    for (int i = 0; i < Board2R4.length; i++) {
+                        System.out.print(Board2R4[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C5.length; i++) {
-                        System.out.print(Board2C5[i] + " ");
+                    for (int i = 0; i < Board2R5.length; i++) {
+                        System.out.print(Board2R5[i] + " ");
                     }
 
                     // Submarine
@@ -951,24 +953,24 @@ public class battleshipRunner {
                         System.out.print(BoardLet[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C1.length; i++) {
-                        System.out.print(Board2C1[i] + " ");
+                    for (int i = 0; i < Board2R1.length; i++) {
+                        System.out.print(Board2R1[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C2.length; i++) {
-                        System.out.print(Board2C2[i] + " ");
+                    for (int i = 0; i < Board2R2.length; i++) {
+                        System.out.print(Board2R2[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C3.length; i++) {
-                        System.out.print(Board2C3[i] + " ");
+                    for (int i = 0; i < Board2R3.length; i++) {
+                        System.out.print(Board2R3[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C4.length; i++) {
-                        System.out.print(Board2C4[i] + " ");
+                    for (int i = 0; i < Board2R4.length; i++) {
+                        System.out.print(Board2R4[i] + " ");
                     }
                     System.out.println(" ");
-                    for (int i = 0; i < Board2C5.length; i++) {
-                        System.out.print(Board2C5[i] + " ");
+                    for (int i = 0; i < Board2R5.length; i++) {
+                        System.out.print(Board2R5[i] + " ");
                     }
 
                     // Clear Question
@@ -987,11 +989,73 @@ public class battleshipRunner {
 
             } else {
                 // Use deafult Placements
+                defaultPlacement();
+                System.out.println(
+                        "Now Printing Final Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot. Press Enter to show Player 2 Board");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardR1.length; i++) {
+                    System.out.print(BoardR1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardR2.length; i++) {
+                    System.out.print(BoardR2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardR3.length; i++) {
+                    System.out.print(BoardR3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardR4.length; i++) {
+                    System.out.print(BoardR4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < BoardR5.length; i++) {
+                    System.out.print(BoardR5[i] + " ");
+                }
                 try {
                     System.in.read();
                     clearConsole();
                 } catch (IOException e) {
                     e.printStackTrace();
+                }
+
+                System.out.println(
+                        "Now Printing Final Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
+                System.out.println(" ");
+                for (int i = 0; i < BoardLet.length; i++) {
+                    System.out.print(BoardLet[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2R1.length; i++) {
+                    System.out.print(Board2R1[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2R2.length; i++) {
+                    System.out.print(Board2R2[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2R3.length; i++) {
+                    System.out.print(Board2R3[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2R4.length; i++) {
+                    System.out.print(Board2R4[i] + " ");
+                }
+                System.out.println(" ");
+                for (int i = 0; i < Board2R5.length; i++) {
+                    System.out.print(Board2R5[i] + " ");
+                }
+                System.out.println(" ");
+                System.out.println("Game will enter battle in 5 seconds");
+                try {
+                    // Sleep for 1 second (1000 milliseconds)
+                    Thread.sleep(6000);
+                } catch (InterruptedException e) {
+                    // Handle the InterruptedException (e.g., log or ignore it)
                 }
             }
         }
@@ -1024,7 +1088,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    BoardC1[sel + 1] = 1;
+                    BoardR1[sel + 1] = 1;
                 } else if (i == 2) {
                     if (y == 'A') {
                         sel = 0;
@@ -1047,7 +1111,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    BoardC2[sel + 1] = 1;
+                    BoardR2[sel + 1] = 1;
                 } else if (i == 3) {
                     if (y == 'A') {
                         sel = 0;
@@ -1070,7 +1134,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    BoardC3[sel + 1] = 1;
+                    BoardR3[sel + 1] = 1;
                 } else if (i == 4) {
                     if (y == 'A') {
                         sel = 0;
@@ -1093,7 +1157,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    BoardC4[sel + 1] = 1;
+                    BoardR4[sel + 1] = 1;
                 } else if (i == 4) {
                     if (y == 'A') {
                         sel = 0;
@@ -1116,7 +1180,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    BoardC5[sel + 1] = 1;
+                    BoardR5[sel + 1] = 1;
                 }
                 // Print Cordinates
                 System.out.println(i + "," + y);
@@ -1145,7 +1209,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    BoardC1[sel + 1] = 1;
+                    BoardR1[sel + 1] = 1;
                 } else if (x == 2) {
                     if (c == 'A') {
                         sel = 0;
@@ -1168,7 +1232,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    BoardC2[sel + 1] = 1;
+                    BoardR2[sel + 1] = 1;
                 } else if (x == 3) {
                     if (c == 'A') {
                         sel = 0;
@@ -1191,7 +1255,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    BoardC3[sel + 1] = 1;
+                    BoardR3[sel + 1] = 1;
                 } else if (x == 4) {
                     if (c == 'A') {
                         sel = 0;
@@ -1214,7 +1278,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    BoardC4[sel + 1] = 1;
+                    BoardR4[sel + 1] = 1;
                 } else if (x == 4) {
                     if (c == 'A') {
                         sel = 0;
@@ -1237,7 +1301,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    BoardC5[sel + 1] = 1;
+                    BoardR5[sel + 1] = 1;
                 }
 
                 System.out.println(x + "," + c);
@@ -1274,7 +1338,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    Board2C1[sel + 1] = 1;
+                    Board2R1[sel + 1] = 1;
                 } else if (i == 2) {
                     if (y == 'A') {
                         sel = 0;
@@ -1297,7 +1361,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    Board2C2[sel + 1] = 1;
+                    Board2R2[sel + 1] = 1;
                 } else if (i == 3) {
                     if (y == 'A') {
                         sel = 0;
@@ -1320,7 +1384,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    Board2C3[sel + 1] = 1;
+                    Board2R3[sel + 1] = 1;
                 } else if (i == 4) {
                     if (y == 'A') {
                         sel = 0;
@@ -1343,7 +1407,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    Board2C4[sel + 1] = 1;
+                    Board2R4[sel + 1] = 1;
                 } else if (i == 4) {
                     if (y == 'A') {
                         sel = 0;
@@ -1366,7 +1430,7 @@ public class battleshipRunner {
                     } else if (y == 'J') {
                         sel = 9;
                     }
-                    Board2C5[sel + 1] = 1;
+                    Board2R5[sel + 1] = 1;
                 }
                 // Print Cordinates
                 System.out.println(i + "," + y);
@@ -1395,7 +1459,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    Board2C1[sel + 1] = 1;
+                    Board2R1[sel + 1] = 1;
                 } else if (x == 2) {
                     if (c == 'A') {
                         sel = 0;
@@ -1418,7 +1482,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    Board2C2[sel + 1] = 1;
+                    Board2R2[sel + 1] = 1;
                 } else if (x == 3) {
                     if (c == 'A') {
                         sel = 0;
@@ -1441,7 +1505,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    Board2C3[sel + 1] = 1;
+                    Board2R3[sel + 1] = 1;
                 } else if (x == 4) {
                     if (c == 'A') {
                         sel = 0;
@@ -1464,7 +1528,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    Board2C4[sel + 1] = 1;
+                    Board2R4[sel + 1] = 1;
                 } else if (x == 4) {
                     if (c == 'A') {
                         sel = 0;
@@ -1487,7 +1551,7 @@ public class battleshipRunner {
                     } else if (c == 'J') {
                         sel = 9;
                     }
-                    Board2C5[sel + 1] = 1;
+                    Board2R5[sel + 1] = 1;
                 }
 
                 System.out.println(x + "," + c);
