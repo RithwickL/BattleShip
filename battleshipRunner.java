@@ -31,14 +31,37 @@ public class battleshipRunner extends defaultPlacement {
 
     public static void battle() {
         String inputY;
-        int Xval;
-        char Yval;
-        try (Scanner info = new Scanner(System.in)) {
+        int Xval2;
+        char Yval2;
+        try (Scanner info2 = new Scanner(System.in)) {
             while (true) {
                 clearConsole();
-                if (true) {
-
+                System.out.println("What is your starting X position (Please use an int 1-5)?");
+                while (true) {
+                    Xval2 = info2.nextInt();
+                    if (Xval2 >= 1 && Xval2 <= 5) {
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                    }
                 }
+
+                while (true) {
+                    System.out.println("What is your starting Y position (A-J)? Use capital letters");
+                    inputY = info2.nextLine();
+
+                    if (inputY.length() != 1) {
+                        System.out.println("Invalid input. Please enter a single Uppercase character (A-J).");
+                    } else {
+                        Yval2 = inputY.charAt(0);
+                        if (Yval2 >= 'A' && Yval2 <= 'J') {
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a single Uppercase character (A-J).");
+                        }
+                    }
+                }
+
             }
         }
     }
