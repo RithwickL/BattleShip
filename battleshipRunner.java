@@ -473,7 +473,7 @@ public class battleshipRunner extends defaultPlacement {
                 }
 
                 while (true) {
-                    System.out.println("Do you want it to be Vertical or Horizontal?");
+                    System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                     Ori = info.nextLine();
 
                     if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")
@@ -555,7 +555,7 @@ public class battleshipRunner extends defaultPlacement {
                 }
 
                 while (true) {
-                    System.out.println("Do you want it to be Vertical or Horizontal?");
+                    System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                     Ori = info.nextLine();
 
                     if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")
@@ -637,7 +637,7 @@ public class battleshipRunner extends defaultPlacement {
                     }
 
                     while (true) {
-                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                         Ori = info.nextLine();
 
                         if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")) {
@@ -763,7 +763,7 @@ public class battleshipRunner extends defaultPlacement {
                     }
 
                     while (true) {
-                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                         Ori = info.nextLine();
 
                         if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")) {
@@ -846,7 +846,7 @@ public class battleshipRunner extends defaultPlacement {
                     }
 
                     while (true) {
-                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                         Ori = info.nextLine();
 
                         if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")) {
@@ -929,7 +929,7 @@ public class battleshipRunner extends defaultPlacement {
                     }
 
                     while (true) {
-                        System.out.println("Do you want it to be Vertical or Horizontal?");
+                        System.out.println("Do you want it to be Vertical(V) or Horizontal(H)?");
                         Ori = info.nextLine();
 
                         if (Ori.equalsIgnoreCase("vertical")
