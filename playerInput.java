@@ -497,18 +497,30 @@ public class playerInput extends defaultPlacement {
             int Xval2;
             char Yval2;
             boolean hit;
+            boolean redo;
             boolean exit;
+            int counter = 10;
+            int counter2 = 10;
             exit = false;
             while (!exit) {
-                if (!containsOne(Board2R1) && !containsOne(Board2R2) && !containsOne(Board2R3)
-                        && !containsOne(Board2R4) && !containsOne(Board2R5)) {
-                    exit = true;
-                }
-                if (!containsOne(BoardR1) && !containsOne(BoardR2) && !containsOne(BoardR3)
-                        && !containsOne(BoardR4) && !containsOne(BoardR5)) {
-                    exit = true;
-                }
-                while (true) {
+                while (!exit) {
+                    if (counter == 0) {
+                        System.out.println("Player 1 Wins!");
+                        try {
+                            // Sleep for 1 second (1000 milliseconds)
+                            Thread.sleep(100000);
+                        } catch (InterruptedException e) {
+                            // Handle the InterruptedException (e.g., log or ignore it)
+                        }
+                    } else if (counter2 == 0) {
+                        System.out.println("Player 2 Wins!");
+                        try {
+                            // Sleep for 1 second (1000 milliseconds)
+                            Thread.sleep(100000);
+                        } catch (InterruptedException e) {
+                            // Handle the InterruptedException (e.g., log or ignore it)
+                        }
+                    }
                     clearConsole();
                     System.out.println(
                             " ");
@@ -517,6 +529,8 @@ public class playerInput extends defaultPlacement {
                     System.out.println(
                             " ");
                     player1Board();
+                    System.out.println(
+                            " ");
 
                     System.out.println("Player 1 choose an attack coordinate");
                     System.out.println("What is your X position attack choice (Please use an int 1-5)?");
@@ -525,6 +539,7 @@ public class playerInput extends defaultPlacement {
                     if (Xval2 >= 1 && Xval2 <= 5) {
                         info.nextLine(); // Consume the newline character
                         hit = false;
+                        redo = false;
                         System.out.println("What is your Y position attack choice (A-J)? Use capital letters");
                         inputY2 = info.nextLine();
                         Yval2 = inputY2.charAt(0);
@@ -533,39 +548,71 @@ public class playerInput extends defaultPlacement {
                             if (Xval2 == 1) {
                                 sel = Yval2 - 'A';
                                 if (Board2R1[sel + 1] == 1) {
+                                    counter = counter - 1;
                                     hit = true;
+                                } else if (Board2R1[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 Board2R1[sel + 1] = 2;
                             } else if (Xval2 == 2) {
                                 sel = Yval2 - 'A';
                                 if (Board2R2[sel + 1] == 1) {
+                                    counter = counter - 1;
                                     hit = true;
+                                } else if (Board2R2[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 Board2R2[sel + 1] = 2;
                             } else if (Xval2 == 3) {
                                 sel = Yval2 - 'A';
                                 if (Board2R3[sel + 1] == 1) {
+                                    counter = counter - 1;
                                     hit = true;
+                                } else if (Board2R3[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 Board2R3[sel + 1] = 2;
                             } else if (Xval2 == 4) {
                                 sel = Yval2 - 'A';
                                 if (Board2R4[sel + 1] == 1) {
+                                    counter = counter - 1;
                                     hit = true;
+                                } else if (Board2R4[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 Board2R4[sel + 1] = 2;
                             } else if (Xval2 == 5) {
                                 sel = Yval2 - 'A';
                                 if (Board2R5[sel + 1] == 1) {
+                                    counter = counter - 1;
                                     hit = true;
                                 }
                                 Board2R5[sel + 1] = 2;
+                            } else if (Board2R5[sel + 1] == 2) {
+                                redo = true;
                             }
 
                             // Check if it's a hit
                             if (hit == true) {
                                 System.out.println("You hit a Ship");
+                                try {
+                                    // Sleep for 1 second (1000 milliseconds)
+                                    Thread.sleep(3000);
+                                } catch (InterruptedException e) {
+                                    // Handle the InterruptedException (e.g., log or ignore it)
+                                }
                                 continue;
+
+                            } else if (redo == true) {
+                                System.out.println("You already attacked that coordinate Try Again");
+                                try {
+                                    // Sleep for 1 second (1000 milliseconds)
+                                    Thread.sleep(3000);
+                                } catch (InterruptedException e) {
+                                    // Handle the InterruptedException (e.g., log or ignore it)
+                                }
+                                continue;
+
                             } else {
                                 break;
                             }
@@ -578,7 +625,24 @@ public class playerInput extends defaultPlacement {
                     }
                 }
 
-                while (true) {
+                while (!exit) {
+                    if (counter == 0) {
+                        System.out.println("Player 1 Wins!");
+                        try {
+                            // Sleep for 1 second (1000 milliseconds)
+                            Thread.sleep(100000);
+                        } catch (InterruptedException e) {
+                            // Handle the InterruptedException (e.g., log or ignore it)
+                        }
+                    } else if (counter2 == 0) {
+                        System.out.println("Player 2 Wins!");
+                        try {
+                            // Sleep for 1 second (1000 milliseconds)
+                            Thread.sleep(100000);
+                        } catch (InterruptedException e) {
+                            // Handle the InterruptedException (e.g., log or ignore it)
+                        }
+                    }
                     clearConsole();
                     System.out.println(
                             " ");
@@ -587,6 +651,8 @@ public class playerInput extends defaultPlacement {
                     System.out.println(
                             " ");
                     player2Board();
+                    System.out.println(
+                            " ");
 
                     System.out.println("Player 2 choose an attack coordinate");
                     System.out.println("What is your X position attack choice (Please use an int 1-5)?");
@@ -595,6 +661,7 @@ public class playerInput extends defaultPlacement {
                     if (Xval2 >= 1 && Xval2 <= 5) {
                         info.nextLine(); // Consume the newline character
                         hit = false;
+                        redo = false;
                         System.out.println("What is your Y position attack choice (A-J)? Use capital letters");
                         inputY2 = info.nextLine();
                         Yval2 = inputY2.charAt(0);
@@ -603,31 +670,50 @@ public class playerInput extends defaultPlacement {
                             if (Xval2 == 1) {
                                 sel = Yval2 - 'A';
                                 if (BoardR1[sel + 1] == 1) {
+                                    counter2 = counter2 - 1;
                                     hit = true;
+                                } else if (BoardR1[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 BoardR1[sel + 1] = 2;
                             } else if (Xval2 == 2) {
                                 sel = Yval2 - 'A';
                                 if (BoardR2[sel + 1] == 1) {
+                                    counter2 = counter2 - 1;
+
                                     hit = true;
+                                } else if (BoardR2[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 BoardR2[sel + 1] = 2;
                             } else if (Xval2 == 3) {
                                 sel = Yval2 - 'A';
                                 if (BoardR3[sel + 1] == 1) {
+                                    counter2 = counter2 - 1;
+
                                     hit = true;
+                                } else if (BoardR3[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 BoardR3[sel + 1] = 2;
                             } else if (Xval2 == 4) {
                                 sel = Yval2 - 'A';
                                 if (BoardR4[sel + 1] == 1) {
+                                    counter2 = counter2 - 1;
+
                                     hit = true;
+                                } else if (BoardR4[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 BoardR4[sel + 1] = 2;
                             } else if (Xval2 == 5) {
                                 sel = Yval2 - 'A';
                                 if (BoardR5[sel + 1] == 1) {
+                                    counter2 = counter2 - 1;
+
                                     hit = true;
+                                } else if (BoardR5[sel + 1] == 2) {
+                                    redo = true;
                                 }
                                 BoardR5[sel + 1] = 2;
                             }
@@ -635,6 +721,22 @@ public class playerInput extends defaultPlacement {
                             // Check if it's a hit
                             if (hit == true) {
                                 System.out.println("You hit a Ship");
+                                try {
+                                    // Sleep for 1 second (1000 milliseconds)
+                                    Thread.sleep(3000);
+                                } catch (InterruptedException e) {
+                                    // Handle the InterruptedException (e.g., log or ignore it)
+                                }
+                                continue;
+                            } else if (redo == true) {
+                                System.out.println("You already attacked that coordinate Try Again");
+                                try {
+                                    // Sleep for 1 second (1000 milliseconds)
+                                    Thread.sleep(3000);
+                                } catch (InterruptedException e) {
+                                    // Handle the InterruptedException (e.g., log or ignore it)
+                                }
+
                                 continue;
                             } else {
                                 break;
@@ -646,18 +748,6 @@ public class playerInput extends defaultPlacement {
                         System.out.println("Invalid input. Please enter a number between 1 and 5.");
                     }
                 }
-
-                if (!containsOne(Board2R1) && !containsOne(Board2R2) && !containsOne(Board2R3)
-                        && !containsOne(Board2R4) && !containsOne(Board2R5)) {
-                    System.out.println("Player 1 has Won!");
-                    break;
-                }
-                if (!containsOne(BoardR1) && !containsOne(BoardR2) && !containsOne(BoardR3)
-                        && !containsOne(BoardR4) && !containsOne(BoardR5)) {
-                    System.out.println("Player 2 has Won!");
-                    break;
-                }
-
             }
         }
     }
@@ -1180,7 +1270,7 @@ public class playerInput extends defaultPlacement {
     // to check if all values in an array are equal to 2
     public static boolean containsOne(int[] array) {
         for (int value : array) {
-            if (value == 1) {
+            if (value != 1) {
                 return true;
             }
         }
