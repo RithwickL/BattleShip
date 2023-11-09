@@ -51,287 +51,303 @@ public class battleshipRunner {
 
                     if (inputY.length() != 1) {
                         System.out.println("Invalid input. Please enter a single character (A-J).");
-                        continue;
-                    }
+                    } else {
+                        Yval = inputY.charAt(0);
+                        if (Yval >= 'A' && Yval <= 'J') {
+                            if (Xval == 1) {
+                                if (Yval == 'A') {
+                                    sel = 0;
+                                } else if (Yval == 'B') {
+                                    sel = 1;
+                                } else if (Yval == 'C') {
+                                    sel = 2;
+                                } else if (Yval == 'D') {
+                                    sel = 3;
+                                } else if (Yval == 'E') {
+                                    sel = 4;
+                                } else if (Yval == 'F') {
+                                    sel = 5;
+                                } else if (Yval == 'G') {
+                                    sel = 6;
+                                } else if (Yval == 'H') {
+                                    sel = 7;
+                                } else if (Yval == 'I') {
+                                    sel = 8;
+                                } else if (Yval == 'J') {
+                                    sel = 9;
+                                }
+                                Board2C1[sel + 1] = 2;
+                            } else if (Xval == 2) {
+                                if (Yval == 'A') {
+                                    sel = 0;
+                                } else if (Yval == 'B') {
+                                    sel = 1;
+                                } else if (Yval == 'C') {
+                                    sel = 2;
+                                } else if (Yval == 'D') {
+                                    sel = 3;
+                                } else if (Yval == 'E') {
+                                    sel = 4;
+                                } else if (Yval == 'F') {
+                                    sel = 5;
+                                } else if (Yval == 'G') {
+                                    sel = 6;
+                                } else if (Yval == 'H') {
+                                    sel = 7;
+                                } else if (Yval == 'I') {
+                                    sel = 8;
+                                } else if (Yval == 'J') {
+                                    sel = 9;
+                                }
+                                Board2C2[sel + 1] = 2;
+                            } else if (Xval == 3) {
+                                if (Yval == 'A') {
+                                    sel = 0;
+                                } else if (Yval == 'B') {
+                                    sel = 1;
+                                } else if (Yval == 'C') {
+                                    sel = 2;
+                                } else if (Yval == 'D') {
+                                    sel = 3;
+                                } else if (Yval == 'E') {
+                                    sel = 4;
+                                } else if (Yval == 'F') {
+                                    sel = 5;
+                                } else if (Yval == 'G') {
+                                    sel = 6;
+                                } else if (Yval == 'H') {
+                                    sel = 7;
+                                } else if (Yval == 'I') {
+                                    sel = 8;
+                                } else if (Yval == 'J') {
+                                    sel = 9;
+                                }
+                                Board2C3[sel + 1] = 2;
+                            } else if (Xval == 4) {
+                                if (Yval == 'A') {
+                                    sel = 0;
+                                } else if (Yval == 'B') {
+                                    sel = 1;
+                                } else if (Yval == 'C') {
+                                    sel = 2;
+                                } else if (Yval == 'D') {
+                                    sel = 3;
+                                } else if (Yval == 'E') {
+                                    sel = 4;
+                                } else if (Yval == 'F') {
+                                    sel = 5;
+                                } else if (Yval == 'G') {
+                                    sel = 6;
+                                } else if (Yval == 'H') {
+                                    sel = 7;
+                                } else if (Yval == 'I') {
+                                    sel = 8;
+                                } else if (Yval == 'J') {
+                                    sel = 9;
+                                }
+                                Board2C4[sel + 1] = 2;
+                            } else if (Xval == 4) {
+                                if (Yval == 'A') {
+                                    sel = 0;
+                                } else if (Yval == 'B') {
+                                    sel = 1;
+                                } else if (Yval == 'C') {
+                                    sel = 2;
+                                } else if (Yval == 'D') {
+                                    sel = 3;
+                                } else if (Yval == 'E') {
+                                    sel = 4;
+                                } else if (Yval == 'F') {
+                                    sel = 5;
+                                } else if (Yval == 'G') {
+                                    sel = 6;
+                                } else if (Yval == 'H') {
+                                    sel = 7;
+                                } else if (Yval == 'I') {
+                                    sel = 8;
+                                } else if (Yval == 'J') {
+                                    sel = 9;
+                                }
+                                Board2C5[sel + 1] = 2;
+                            }
+                            break;
 
-                    Yval = inputY.charAt(0);
-
-                    if (Yval >= 'A' && Yval <= 'J') {
-                        if (Xval == 1) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            Board2C1[sel + 1] = 2;
-                        } else if (Xval == 2) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            Board2C2[sel + 1] = 2;
-                        } else if (Xval == 3) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            Board2C3[sel + 1] = 2;
-                        } else if (Xval == 4) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            Board2C4[sel + 1] = 2;
-                        } else if (Xval == 4) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            Board2C5[sel + 1] = 2;
+                        } else {
+                            System.out.println("Invalid input. Please enter a single character (A-J)");
                         }
-                        break;
-                    } else {
-                        System.out.println("Invalid input. Please enter a single character (A-J)");
                     }
 
                 }
-                boolean allTwosInArrayC1 = checkIfAllTwos(BoardC1);
-                boolean allTwosInArrayC2 = checkIfAllTwos(BoardC2);
-                boolean allTwosInArrayC3 = checkIfAllTwos(BoardC3);
-                boolean allTwosInArrayC4 = checkIfAllTwos(BoardC4);
-                boolean allTwosInArrayC5 = checkIfAllTwos(BoardC5);
 
-                if (allTwosInArrayC1 || allTwosInArrayC2 || allTwosInArrayC3 || allTwosInArrayC4 || allTwosInArrayC5) {
+                if (containsOne(Board2C1) || containsOne(Board2C2) || containsOne(Board2C3) || containsOne(Board2C4)
+                        || containsOne(Board2C5)) {
+                    System.out.println("Player two still has ships contains a 1.");
+                    System.out.println(" ");
+                    System.out.println("Press Enter to clear console and move to Player 2");
 
-                }
-
-                System.out.println("Player 2 choose a coordinate to attack");
-                System.out.println("What is your X position attack choice (Please use an int 1-5)?");
-                while (true) {
-                    Xval = info.nextInt();
-                    if (Xval >= 1 && Xval <= 5) {
-                        break;
-                    } else {
-                        System.out.println("Invalid input. Please enter a number between 1 and 5.");
-                    }
-                }
-
-                while (true) {
-                    System.out.println("What is your starting Y position (A-J)? Use capital letters");
-                    inputY = info.nextLine().toUpperCase();
-
-                    if (inputY.length() != 1) {
-                        System.out.println("Invalid input. Please enter a single character (A-J).");
-                        continue;
+                    // Wait for Enter and clear console
+                    try {
+                        System.in.read();
+                        clearConsole();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
-                    Yval = inputY.charAt(0);
-
-                    if (Yval >= 'A' && Yval <= 'J') {
-                        if (Xval == 1) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            BoardC1[sel + 1] = 2;
-                        } else if (Xval == 2) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            BoardC2[sel + 1] = 2;
-                        } else if (Xval == 3) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            BoardC3[sel + 1] = 2;
-                        } else if (Xval == 4) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            BoardC4[sel + 1] = 2;
-                        } else if (Xval == 4) {
-                            if (Yval == 'A') {
-                                sel = 0;
-                            } else if (Yval == 'B') {
-                                sel = 1;
-                            } else if (Yval == 'C') {
-                                sel = 2;
-                            } else if (Yval == 'D') {
-                                sel = 3;
-                            } else if (Yval == 'E') {
-                                sel = 4;
-                            } else if (Yval == 'F') {
-                                sel = 5;
-                            } else if (Yval == 'G') {
-                                sel = 6;
-                            } else if (Yval == 'H') {
-                                sel = 7;
-                            } else if (Yval == 'I') {
-                                sel = 8;
-                            } else if (Yval == 'J') {
-                                sel = 9;
-                            }
-                            BoardC5[sel + 1] = 2;
+                    System.out.println("Player 2 choose a coordinate to attack");
+                    System.out.println("What is your X position attack choice (Please use an int 1-5)?");
+                    while (true) {
+                        Xval = info.nextInt();
+                        if (Xval >= 1 && Xval <= 5) {
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a number between 1 and 5.");
                         }
-                        break;
-                    } else {
-                        System.out.println("Invalid input. Please enter a single character (A-J)");
                     }
+
+                    while (true) {
+                        System.out.println("What is your starting Y position (A-J)? Use capital letters");
+                        inputY = info.nextLine().toUpperCase();
+
+                        if (inputY.length() != 1) {
+                            System.out.println("Invalid input. Please enter a single character (A-J).");
+                        } else {
+                            Yval = inputY.charAt(0);
+                            if (Yval >= 'A' && Yval <= 'J') {
+                                if (Xval == 1) {
+                                    if (Yval == 'A') {
+                                        sel = 0;
+                                    } else if (Yval == 'B') {
+                                        sel = 1;
+                                    } else if (Yval == 'C') {
+                                        sel = 2;
+                                    } else if (Yval == 'D') {
+                                        sel = 3;
+                                    } else if (Yval == 'E') {
+                                        sel = 4;
+                                    } else if (Yval == 'F') {
+                                        sel = 5;
+                                    } else if (Yval == 'G') {
+                                        sel = 6;
+                                    } else if (Yval == 'H') {
+                                        sel = 7;
+                                    } else if (Yval == 'I') {
+                                        sel = 8;
+                                    } else if (Yval == 'J') {
+                                        sel = 9;
+                                    }
+                                    Board2C1[sel + 1] = 2;
+                                } else if (Xval == 2) {
+                                    if (Yval == 'A') {
+                                        sel = 0;
+                                    } else if (Yval == 'B') {
+                                        sel = 1;
+                                    } else if (Yval == 'C') {
+                                        sel = 2;
+                                    } else if (Yval == 'D') {
+                                        sel = 3;
+                                    } else if (Yval == 'E') {
+                                        sel = 4;
+                                    } else if (Yval == 'F') {
+                                        sel = 5;
+                                    } else if (Yval == 'G') {
+                                        sel = 6;
+                                    } else if (Yval == 'H') {
+                                        sel = 7;
+                                    } else if (Yval == 'I') {
+                                        sel = 8;
+                                    } else if (Yval == 'J') {
+                                        sel = 9;
+                                    }
+                                    Board2C2[sel + 1] = 2;
+                                } else if (Xval == 3) {
+                                    if (Yval == 'A') {
+                                        sel = 0;
+                                    } else if (Yval == 'B') {
+                                        sel = 1;
+                                    } else if (Yval == 'C') {
+                                        sel = 2;
+                                    } else if (Yval == 'D') {
+                                        sel = 3;
+                                    } else if (Yval == 'E') {
+                                        sel = 4;
+                                    } else if (Yval == 'F') {
+                                        sel = 5;
+                                    } else if (Yval == 'G') {
+                                        sel = 6;
+                                    } else if (Yval == 'H') {
+                                        sel = 7;
+                                    } else if (Yval == 'I') {
+                                        sel = 8;
+                                    } else if (Yval == 'J') {
+                                        sel = 9;
+                                    }
+                                    Board2C3[sel + 1] = 2;
+                                } else if (Xval == 4) {
+                                    if (Yval == 'A') {
+                                        sel = 0;
+                                    } else if (Yval == 'B') {
+                                        sel = 1;
+                                    } else if (Yval == 'C') {
+                                        sel = 2;
+                                    } else if (Yval == 'D') {
+                                        sel = 3;
+                                    } else if (Yval == 'E') {
+                                        sel = 4;
+                                    } else if (Yval == 'F') {
+                                        sel = 5;
+                                    } else if (Yval == 'G') {
+                                        sel = 6;
+                                    } else if (Yval == 'H') {
+                                        sel = 7;
+                                    } else if (Yval == 'I') {
+                                        sel = 8;
+                                    } else if (Yval == 'J') {
+                                        sel = 9;
+                                    }
+                                    Board2C4[sel + 1] = 2;
+                                } else if (Xval == 4) {
+                                    if (Yval == 'A') {
+                                        sel = 0;
+                                    } else if (Yval == 'B') {
+                                        sel = 1;
+                                    } else if (Yval == 'C') {
+                                        sel = 2;
+                                    } else if (Yval == 'D') {
+                                        sel = 3;
+                                    } else if (Yval == 'E') {
+                                        sel = 4;
+                                    } else if (Yval == 'F') {
+                                        sel = 5;
+                                    } else if (Yval == 'G') {
+                                        sel = 6;
+                                    } else if (Yval == 'H') {
+                                        sel = 7;
+                                    } else if (Yval == 'I') {
+                                        sel = 8;
+                                    } else if (Yval == 'J') {
+                                        sel = 9;
+                                    }
+                                    Board2C5[sel + 1] = 2;
+                                }
+                                break;
+
+                            } else {
+                                System.out.println("Invalid input. Please enter a single character (A-J)");
+                            }
+                        }
+
+                    }
+
+                } else {
+                    System.out.println("Player 2 Board does not contain a Ship.");
+                    break;
+                }
+                if (containsOne(BoardC1) || containsOne(BoardC2) || containsOne(BoardC3) || containsOne(BoardC4)
+                        || containsOne(BoardC5)) {
+                    continue;
+                } else {
+                    System.out.println("Player 1 Board does not contain a Ship.");
+                    break;
                 }
             }
         }
@@ -439,15 +455,18 @@ public class battleshipRunner {
 
                 while (true) {
                     System.out.println("What is your starting Y position (A-J)? Use capital letters");
-                    inputY = info.nextLine().toUpperCase();
-                    Yval = inputY.charAt(0);
+                    inputY = info.nextLine();
 
-                    if (inputY.length() != 1 || Yval <= 'A' && Yval >= 'J') {
-                        System.out.println("Invalid input. Please enter a single character (A-J).");
+                    if (inputY.length() != 1) {
+                        System.out.println("Invalid input. Please enter a single Uppercase character (A-J).");
                     } else {
                         Yval = inputY.charAt(0);
-                        shipYVals[5] = Yval;
-                        break;
+                        if (Yval >= 'A' && Yval <= 'J') {
+                            shipYVals[0] = Yval;
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a single Uppercase character (A-J).");
+                        }
                     }
                 }
 
@@ -455,11 +474,12 @@ public class battleshipRunner {
                     System.out.println("Do you want it to be Vertical or Horizontal?");
                     Ori = info.nextLine();
 
-                    if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")) {
+                    if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")
+                            || Ori.equalsIgnoreCase("v") || Ori.equalsIgnoreCase("h")) {
                         shipOrientations[0] = Ori;
                         break;
                     } else {
-                        System.out.println("Invalid input. Please enter Vertical or Horizontal");
+                        System.out.println("Invalid input. Please enter Vertical(V) or Horizontal(H)");
                     }
                 }
 
@@ -518,14 +538,17 @@ public class battleshipRunner {
                 while (true) {
                     System.out.println("What is your starting Y position (A-J)? Use capital letters");
                     inputY = info.nextLine().toUpperCase();
-                    Yval = inputY.charAt(0);
 
-                    if (inputY.length() != 1 || Yval <= 'A' && Yval >= 'J') {
+                    if (inputY.length() != 1) {
                         System.out.println("Invalid input. Please enter a single character (A-J).");
                     } else {
                         Yval = inputY.charAt(0);
-                        shipYVals[1] = Yval;
-                        break;
+                        if (Yval >= 'A' && Yval <= 'J') {
+                            shipYVals[1] = Yval;
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a single character (A-J).");
+                        }
                     }
                 }
 
@@ -533,11 +556,12 @@ public class battleshipRunner {
                     System.out.println("Do you want it to be Vertical or Horizontal?");
                     Ori = info.nextLine();
 
-                    if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")) {
+                    if (Ori.equalsIgnoreCase("vertical") || Ori.equalsIgnoreCase("horizontal")
+                            || Ori.equalsIgnoreCase("v") || Ori.equalsIgnoreCase("h")) {
                         shipOrientations[1] = Ori;
                         break;
                     } else {
-                        System.out.println("Invalid input. Please enter Vertical or Horizontal");
+                        System.out.println("Invalid input. Please enter Vertical(V) or Horizontal(H)");
                     }
                 }
 
@@ -961,6 +985,14 @@ public class battleshipRunner {
 
                 }
 
+            } else {
+                // Use deafult Placements
+                try {
+                    System.in.read();
+                    clearConsole();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -1481,12 +1513,12 @@ public class battleshipRunner {
     }
 
     // to check if all values in an array are equal to 2
-    public static boolean checkIfAllTwos(int[] array) {
+    public static boolean containsOne(int[] array) {
         for (int value : array) {
-            if (value != 2) {
-                return false; // Found a value that is not 2, return false
+            if (value == 1) {
+                return true;
             }
         }
-        return true; // All values in the array are 2
+        return false;
     }
 }
