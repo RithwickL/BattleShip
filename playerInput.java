@@ -87,29 +87,7 @@ public class playerInput extends defaultPlacement {
                 System.out
                         .println("Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR1.length; i++) {
-                    System.out.print(BoardR1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR2.length; i++) {
-                    System.out.print(BoardR2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR3.length; i++) {
-                    System.out.print(BoardR3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR4.length; i++) {
-                    System.out.print(BoardR4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR5.length; i++) {
-                    System.out.print(BoardR5[i] + " ");
-                }
+                player1Board();
 
                 // Aircraft
                 System.out.println(" ");
@@ -165,29 +143,7 @@ public class playerInput extends defaultPlacement {
                         .println(
                                 "Now Printing Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR1.length; i++) {
-                    System.out.print(BoardR1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR2.length; i++) {
-                    System.out.print(BoardR2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR3.length; i++) {
-                    System.out.print(BoardR3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR4.length; i++) {
-                    System.out.print(BoardR4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR5.length; i++) {
-                    System.out.print(BoardR5[i] + " ");
-                }
+                player1Board();
 
                 // Battleship
                 System.out.println(" ");
@@ -246,25 +202,7 @@ public class playerInput extends defaultPlacement {
                     System.out.print(BoardLet[i] + " ");
                 }
                 System.out.println(" ");
-                for (int i = 0; i < BoardR1.length; i++) {
-                    System.out.print(BoardR1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR2.length; i++) {
-                    System.out.print(BoardR2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR3.length; i++) {
-                    System.out.print(BoardR3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR4.length; i++) {
-                    System.out.print(BoardR4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR5.length; i++) {
-                    System.out.print(BoardR5[i] + " ");
-                }
+                player1Board();
 
                 // Submarine
                 System.out.println(" ");
@@ -318,29 +256,7 @@ public class playerInput extends defaultPlacement {
                 System.out.println(
                         "Now Printing Final Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR1.length; i++) {
-                    System.out.print(BoardR1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR2.length; i++) {
-                    System.out.print(BoardR2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR3.length; i++) {
-                    System.out.print(BoardR3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR4.length; i++) {
-                    System.out.print(BoardR4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR5.length; i++) {
-                    System.out.print(BoardR5[i] + " ");
-                }
+                player1Board();
 
                 // Clear Question
                 System.out.println(" ");
@@ -362,29 +278,7 @@ public class playerInput extends defaultPlacement {
                         .println(
                                 "Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R1.length; i++) {
-                    System.out.print(Board2R1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R2.length; i++) {
-                    System.out.print(Board2R2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R3.length; i++) {
-                    System.out.print(Board2R3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R4.length; i++) {
-                    System.out.print(Board2R4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R5.length; i++) {
-                    System.out.print(Board2R5[i] + " ");
-                }
+                player2Board();
 
                 // Aircraft
                 System.out.println(" ");
@@ -439,29 +333,7 @@ public class playerInput extends defaultPlacement {
                         .println(
                                 "Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R1.length; i++) {
-                    System.out.print(Board2R1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R2.length; i++) {
-                    System.out.print(Board2R2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R3.length; i++) {
-                    System.out.print(Board2R3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R4.length; i++) {
-                    System.out.print(Board2R4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R5.length; i++) {
-                    System.out.print(Board2R5[i] + " ");
-                }
+                player2Board();
 
                 // Battleship
                 System.out.println(" ");
@@ -515,29 +387,7 @@ public class playerInput extends defaultPlacement {
                         .println(
                                 "Now Printing Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R1.length; i++) {
-                    System.out.print(Board2R1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R2.length; i++) {
-                    System.out.print(Board2R2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R3.length; i++) {
-                    System.out.print(Board2R3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R4.length; i++) {
-                    System.out.print(Board2R4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R5.length; i++) {
-                    System.out.print(Board2R5[i] + " ");
-                }
+                player2Board();
 
                 // Submarine
                 System.out.println(" ");
@@ -593,29 +443,7 @@ public class playerInput extends defaultPlacement {
                 System.out.println(
                         "Now Printing Final Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R1.length; i++) {
-                    System.out.print(Board2R1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R2.length; i++) {
-                    System.out.print(Board2R2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R3.length; i++) {
-                    System.out.print(Board2R3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R4.length; i++) {
-                    System.out.print(Board2R4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R5.length; i++) {
-                    System.out.print(Board2R5[i] + " ");
-                }
+                player2Board();
 
                 // Clear Question
                 System.out.println(" ");
@@ -635,29 +463,7 @@ public class playerInput extends defaultPlacement {
                 System.out.println(
                         "Now Printing Final Player 1 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot. Press Enter to show Player 2 Board");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR1.length; i++) {
-                    System.out.print(BoardR1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR2.length; i++) {
-                    System.out.print(BoardR2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR3.length; i++) {
-                    System.out.print(BoardR3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR4.length; i++) {
-                    System.out.print(BoardR4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < BoardR5.length; i++) {
-                    System.out.print(BoardR5[i] + " ");
-                }
+                player1Board();
                 try {
                     System.in.read();
                     clearConsole();
@@ -668,29 +474,7 @@ public class playerInput extends defaultPlacement {
                 System.out.println(
                         "Now Printing Final Player 2 Board, 0 = No Ship Exists On Spot and 1 = Ship Exists On Spot");
                 System.out.println(" ");
-                for (int i = 0; i < BoardLet.length; i++) {
-                    System.out.print(BoardLet[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R1.length; i++) {
-                    System.out.print(Board2R1[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R2.length; i++) {
-                    System.out.print(Board2R2[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R3.length; i++) {
-                    System.out.print(Board2R3[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R4.length; i++) {
-                    System.out.print(Board2R4[i] + " ");
-                }
-                System.out.println(" ");
-                for (int i = 0; i < Board2R5.length; i++) {
-                    System.out.print(Board2R5[i] + " ");
-                }
+                player2Board();
                 System.out.println(" ");
                 System.out.println("Game will enter battle in 5 seconds");
                 try {
@@ -726,6 +510,14 @@ public class playerInput extends defaultPlacement {
                 }
                 while (true) {
                     clearConsole();
+                    System.out.println(
+                            " ");
+                    System.out.println(
+                            "This is your Board Player 1: 0 - ship doesn't exist, 1 - ship exists, 2 - ship bombed");
+                    System.out.println(
+                            " ");
+                    player1Board();
+
                     System.out.println("Player 1 choose an attack coordinate");
                     System.out.println("What is your X position attack choice (Please use an int 1-5)?");
                     Xval2 = info.nextInt();
@@ -788,6 +580,14 @@ public class playerInput extends defaultPlacement {
 
                 while (true) {
                     clearConsole();
+                    System.out.println(
+                            " ");
+                    System.out.println(
+                            "This is your Board Player 2: 0 - ship doesn't exist, 1 - ship exists, 2 - ship bombed");
+                    System.out.println(
+                            " ");
+                    player2Board();
+
                     System.out.println("Player 2 choose an attack coordinate");
                     System.out.println("What is your X position attack choice (Please use an int 1-5)?");
                     Xval2 = info.nextInt();
@@ -1386,4 +1186,57 @@ public class playerInput extends defaultPlacement {
         }
         return false;
     }
+
+    public static void player1Board() {
+        for (int i = 0; i < BoardLet.length; i++) {
+            System.out.print(BoardLet[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < BoardR1.length; i++) {
+            System.out.print(BoardR1[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < BoardR2.length; i++) {
+            System.out.print(BoardR2[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < BoardR3.length; i++) {
+            System.out.print(BoardR3[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < BoardR4.length; i++) {
+            System.out.print(BoardR4[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < BoardR5.length; i++) {
+            System.out.print(BoardR5[i] + " ");
+        }
+    }
+
+    public static void player2Board() {
+        for (int i = 0; i < BoardLet.length; i++) {
+            System.out.print(BoardLet[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < Board2R1.length; i++) {
+            System.out.print(Board2R1[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < Board2R2.length; i++) {
+            System.out.print(Board2R2[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < Board2R3.length; i++) {
+            System.out.print(Board2R3[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < Board2R4.length; i++) {
+            System.out.print(Board2R4[i] + " ");
+        }
+        System.out.println(" ");
+        for (int i = 0; i < Board2R5.length; i++) {
+            System.out.print(Board2R5[i] + " ");
+        }
+    }
+
 }
